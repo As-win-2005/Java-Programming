@@ -1,0 +1,41 @@
+import java.util.*
+import java.io.*;
+
+class find_min_max{
+
+public static void main(String args[])throws Exception{
+
+
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+System.out.println("Enter the length of the array");
+int a=Integer.parseInt(br.readLine());
+
+int arr[]=new int[a];
+System.out.println("Enter the elements");
+
+StringTokenizer st=new StringTokenizer(br.readLine());
+for(int i=0;i<arr.length;i++){
+arr[i]=Integer.parseInt(st.nextToken());
+}
+int max=arr[arr.length-1],min=arr[0];
+
+for(int i=0;i<arr.length;i++){
+if(arr[i]>max){
+max=arr[i];
+}
+
+if(arr[i]<min){
+min=arr[i];
+}
+
+
+}
+System.out.println("listing array elements");
+StringBuffer sb=new StringBuffer();
+for(int x:arr){
+	sb.append(x).append(" ");
+}
+System.out.println(sb.toString());
+System.out.println("The greatest element is : "+max+" the smallest element is : "+min);
+}
+}
